@@ -22,7 +22,7 @@ const What = () => {
                 <h1 className="gradient__text">
                      WHY EXCHANGE CRYPTOS?
                 </h1>
-                <a href='https://coinmarketcap.com/alexandria/article/the-beginners-guide-to-token-swaps' target='_blank'>Explore the Library</a>
+                <a href='https://coinmarketcap.com/alexandria/article/the-beginners-guide-to-token-swaps' target='_blank' rel='noopener'>Explore the Library</a>
             </div>
             <div className="gpt3__whatgpt3-container">
 

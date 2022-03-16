@@ -17,8 +17,13 @@ class BuyForm extends Component {
                         event.preventDefault()
                         console.log('purchaseing ,...')
                         let etherAmount = this.input.value.toString()
-                        etherAmount = window.web3.utils.toWei(etherAmount,'ether')
-                        this.props.buyTokens(etherAmount)
+                        if(etherAmount <= 0){
+                            alert("Enter Valid Amount");
+                        }else{
+                            etherAmount = window.web3.utils.toWei(etherAmount,'ether')
+                            this.props.buyTokens(etherAmount)
+                        }
+                        
                     }}>
                       
                             <div className="info gradient__text">
@@ -34,7 +39,7 @@ class BuyForm extends Component {
                                     this.setState({ output: etherAmount * 100 })
                                 }}
                                 ref={(input)=>{this.input=input}}
-                                type="text"
+                                type="number"
                                 className="form-control form-control-lg"
                                 placeholder="0"
                               />
@@ -59,13 +64,13 @@ class BuyForm extends Component {
                             <div className="input-group-append">
                                 <div className="input-group-text">
                                  <img src='' height='32' alt=""/> 
-                                &nbsp; KUN
+                                &nbsp; CORE
                                 </div>
                             </div>
                         </div>
                         <div className="ex-info gradient__text">
                             <label>Exchange Rate</label>
-                            <b>1ETH= 100 KUN</b>
+                            <b>1ETH = 100 CORE</b>
                         </div>
                         
                         

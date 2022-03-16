@@ -707,6 +707,12 @@ a{
     .list__title h1{
         font-size: 34px;
     }
+    .list__live{
+        display: none;
+    }
+    .list__title span{
+        font-size: 34px;
+    }
     .table th{
         font-size:22px;
     }
@@ -1075,7 +1081,7 @@ footer .line{
 ------------------------------------------------------------- */
 .tswap__container{
     min-height: 80vh;
-    background: url('./TokenSwap/tb.jpg') bottom/100% no-repeat ;
+    background: url('./TokenSwap/tb.jpg') bottom/80% fixed no-repeat ;
     -webkit-background-size:cover;
     -moz-background-size: cover ;
     -moz-background-size: cover ;

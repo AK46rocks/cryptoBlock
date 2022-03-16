@@ -9,6 +9,7 @@ import Cric from './NFTGame/Cric'
 import Game from './NFTGame/Game'
 import HomeG from './NFTGame/HomeG'
 import Poli from './NFTGame/Poli'
+import Multiplayer from './NFTGame/Multiplayer'
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
                        <Route exact path='/cric' element={<Cric/>}></Route>
                        <Route exact path='/homeg' element={<HomeG/>}></Route>
                        <Route exact path='/poli' element={<Poli/>}></Route>
+                       <Route exact path='/multi' element={<Multiplayer/>}></Route>
                     </Routes>
 
       </>

@@ -10,7 +10,7 @@ const News = () => {
         //  console.log(cryptoNews);
 
     useEffect(() => {
-        if(isFetching == false){
+        if(isFetching === false){
             // console.log('loading...')
             const arr = cryptoNews.value;
             
@@ -45,7 +45,7 @@ const News = () => {
                                       <p>{moment(bathmi.datePublished).startOf('ss').fromNow()}</p>
                                       <h3>{bathmi.name}</h3>
                                   </div>
-                                  <a href={bathmi.url}>Read Full Article</a>
+                                  <a href={bathmi.url} target='_blank'>Read Full Article</a>
                               </div>
                           </div>
                     ))}

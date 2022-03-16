@@ -16,8 +16,13 @@ class SellForm extends Component {
             event.preventDefault()
             console.log('purchaseing ,...')
             let tokenAmount = this.input.value.toString()
-            tokenAmount = window.web3.utils.toWei(tokenAmount,'ether')
-            this.props.sellTokens(tokenAmount)
+            if(tokenAmount <= 0){
+                alert("Enter Valid Amount");
+            }else{
+                tokenAmount = window.web3.utils.toWei(tokenAmount,'ether')
+                this.props.sellTokens(tokenAmount)    
+            }
+            
         }}>
           
                 <div className="info gradient__text">
@@ -40,7 +45,7 @@ class SellForm extends Component {
                 <div className="input-group-append">
                     <div className="input-group-text">
                      <img src='' height='32' alt=""/> 
-                    &nbsp; KUN
+                    &nbsp; CORE
                     </div>
                 </div> 
             </div>
@@ -64,7 +69,7 @@ class SellForm extends Component {
             </div>
             <div className="ex-info gradient__text">
                 <label>Exchange Rate</label>
-                <b>100 KUN = 1ETH</b>
+                <b>100 CORE = 1ETH</b>
             </div>
             
             

@@ -8,14 +8,14 @@ import Moralis from 'moralis';
 // const Moralis = require('moralis');
 const Navbar = () => {
 
-    const serverUrl = "https://qwuyzxeeoosg.usemoralis.com:2053/server";
-    const appId = "jSxVvRARdVv3Sfp1dq1WJ47EHreGWTllFKJcn1MY";
+    const serverUrl = "https://wvim2a5fxrco.usemoralis.com:2053/server";
+    const appId = "QrqwpM5Ng6JVbPfqEgulY4icpvMms9ccvRcvkRs7";
     Moralis.start({ serverUrl, appId });
 
   async function login(){
     const user = await Moralis.authenticate();
-    console.log(user.get('ethAddress'));
-    document.querySelector('.btn').innerHTML = user.get('ethAddress');
+    alert(`${user.get('ethAddress')}`);
+    document.getElementById('login').innerHTML = user.get('ethAddress');
     
   }
 

@@ -15,7 +15,9 @@ import store from './components/app/store';
 ReactDOM.render(
         <Router>
             <Provider store={store}>
-               <App />
+                
+                   <App />
+               
             </Provider>
         </Router>, document.getElementById('root'));
 

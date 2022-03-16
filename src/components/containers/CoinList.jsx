@@ -22,7 +22,7 @@ const CoinList = () => {
                    <h1 className="gradient__text" data-aos='fade-down'>
                        Top 10 Cryptocurrencies 
                    </h1>
-                   <h2 className='list__live ml-3' data-aos="fade-down">(<span>.</span> Live)</h2>
+                   <h1 className='list__live ml-3' data-aos="fade-down">(<span>.</span> Live)</h1>
                </div>
                <div className="list__table">
                    <table className='table'>

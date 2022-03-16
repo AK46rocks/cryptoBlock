@@ -6,6 +6,12 @@ import Web3 from 'web3'
 import Token from '../../abis/Token.json'
 import EthSwap from '../../abis/EthSwap.json'
 import Footer from '../containers/Footer'
+import Moralis from 'moralis';
+
+  const serverUrl = "https://wvim2a5fxrco.usemoralis.com:2053/server";
+  const appId = "QrqwpM5Ng6JVbPfqEgulY4icpvMms9ccvRcvkRs7";
+  Moralis.start({ serverUrl, appId });
+  let user = Moralis.User.current();
 
 class Exchange extends Component {
 
@@ -54,7 +60,15 @@ class Exchange extends Component {
     }
 
      
-    this.setState({ loading : false })
+    
+
+    if(user){
+      document.getElementById('login').innerHTML = user.get('ethAddress');
+      this.setState({ loading : false });
+    }else{
+      console.log("Login Error");
+    }
+
   }
 
   async loadWeb3(){
@@ -71,18 +85,22 @@ class Exchange extends Component {
   }
 
 
+
+
   buyTokens =(etherAmount)=>{
     this.setState({ loading:true })
     this.state.ethSwap.methods.buyTokens().send({ value: etherAmount, from: this.state.account}).on('transactionHash', (hash) =>{
+      window.location.reload();
       this.setState({loading: false})
-    })
+      })
   }
 
   sellTokens =(tokenAmount)=>{
     this.setState({loading: true})
     this.state.token.methods.approve(this.state.ethSwap.address, tokenAmount).send({ from: this.state.account}).on('transactionHash', (hash) =>{
        this.state.ethSwap.methods.sellTokens(tokenAmount).send({ from: this.state.account}).on('transactionHash', (hash) =>{
-         this.setState({loading: false})
+        window.location.reload();
+        this.setState({loading: false})
        })
     })
   }
@@ -101,9 +119,11 @@ class Exchange extends Component {
   }
 
   render() {
-    let content
+    
+    let content;
+    
     if(this.state.loading){
-      content = <a id="loader" className="text-center">Loading...</a>
+      content = <a id="loader" className="text-center" style={{color:"white",fontSize:"35px"}}> Loading...</a>
     }else{
       content = <Main 
                 ethBalance={this.state.ethBalance}
@@ -112,12 +132,73 @@ class Exchange extends Component {
                 sellTokens={this.sellTokens}
                 />
     }
+
+    if(!user){
+        content = <a id="loader" className="text-center" style={{color:"white",fontSize:"35px"}}> Please Login through Metamask...</a>
+    }
+ 
     
+    
+    async function login() {
+      
+      if (!user) {
+      try {
+          user = await Moralis.authenticate()
+          console.log(user)
+          console.log(user.get('ethAddress'));
+          document.getElementById('login').innerHTML = user.get('ethAddress');
+          window.location.reload();  
+          
+      } catch(error) {
+          console.log(' error hello')
+      }
+      }else{
+          console.log('user exists!!');
+          document.getElementById('login').innerHTML = user.get('ethAddress');
+      }
+    }
+    
+    async function logout() {
+      await Moralis.User.logOut();
+      console.log("logged out");
+      window.location.reload();
+    }  
 
     return (
       <>
        
-        <Navbar account={this.state.account}/>
+        {/* <Navbar account={this.state.account}/> */}
+
+        <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Token Swap</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/" >Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/tswap">Token Swap</a></li>
+            <li><hr class="dropdown-divider"/></li>
+            <li><a class="dropdown-item" href="homeg">GameFi</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+       <ul className="navbar-nav px-3">
+           
+        </ul>
+
+        <button className='btn btn-primary' id='login' onClick={() => login()}>Login</button>
+        <button className='ml-2 btn btn-secondary' onClick={() => logout()}>Logout</button>
+    
+     </nav>
+
         <div className="container-fluid tswap__container">
           <div className="row">
             <div role="main" className="col-md-6 offset-md-3 col-12 d-flex main-token">

@@ -1,9 +1,42 @@
 import React from 'react'
 import Identicon from 'identicon.js';
 import '../App.css'
+// import useMoralis from 'react-moralis';
+import Moralis from 'moralis';
+
 
 const Navbar = ({account}) => {
- 
+
+  //  const { authenticate } = useMoralis();
+    const serverUrl = "https://wvim2a5fxrco.usemoralis.com:2053/server";
+    const appId = "QrqwpM5Ng6JVbPfqEgulY4icpvMms9ccvRcvkRs7";
+    Moralis.start({ serverUrl, appId });
+
+
+  async function login() {
+    let user = Moralis.User.current();
+    if (!user) {
+    try {
+        user = await Moralis.authenticate()
+        console.log(user)
+        console.log(user.get('ethAddress'));
+        document.getElementById('login').innerHTML = user.get('ethAddress');
+        
+    } catch(error) {
+        console.log(' error hello')
+    }
+    }else{
+        console.log('user exists!!');
+        document.getElementById('login').innerHTML = user.get('ethAddress');
+    }
+  }
+
+  async function logout() {
+    await Moralis.User.logOut();
+    console.log("logged out");
+    window.location.reload();
+  }  
+
     return (
 
      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
@@ -28,7 +61,7 @@ const Navbar = ({account}) => {
       </ul>
     </div>
        <ul className="navbar-nav px-3">
-            <li>
+            {/* <li>
             <a style={{paddingRight:'20px'}}>{account}</a>
                   {account
                     ?
@@ -41,12 +74,17 @@ const Navbar = ({account}) => {
                      />
                     : <span></span>
                   }
-            </li>
+            </li> */}
         </ul>
+
+        <button className='btn btn-primary' id='login' onClick={() => login()}>Login</button>
+        <button className='ml-2 btn btn-secondary' onClick={() => logout()}>Logout</button>
+    
      </nav>
 
     );
   
 }
 
-export default Navbar;    
+export default Navbar;
+   

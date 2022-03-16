@@ -3,6 +3,7 @@ import '../App.css';
 import BuyForm from './BuyForm';
 import SellForm from './SellForm';
 
+
 class Main extends Component {
 
     constructor(props){
@@ -11,8 +12,10 @@ class Main extends Component {
             currentForm:'buy',
         }
     }
+    
 
     render(){
+
 
         let content
         if(this.state.currentForm == 'buy'){
