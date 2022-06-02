@@ -22,10 +22,10 @@ class App extends Component {
                        <Route exact path='/' element={<Home/>}></Route>
                        <Route exact path='/tswap' element={<Exchange/>}></Route>
                        <Route handler={Error404}></Route>
-                       <Route exact path='/game' element={<Game/>}></Route>
-                       <Route exact path='/cric' element={<Cric/>}></Route>
+                       <Route exact path='/food' element={<Game/>}></Route>
+                       <Route exact path='/cricket' element={<Cric/>}></Route>
                        <Route exact path='/homeg' element={<HomeG/>}></Route>
-                       <Route exact path='/poli' element={<Poli/>}></Route>
+                       <Route exact path='/politicians' element={<Poli/>}></Route>
                        <Route exact path='/multi' element={<Multiplayer/>}></Route>
                     </Routes>
 

@@ -119,6 +119,12 @@ body{
 .cric__card{
     background: url('./gameImg/batball.jpg') center/cover no-repeat;
 }
+.food__card{
+    background: url('./gameImg/milkshake.png') center/cover no-repeat;
+}
+.politician__card{
+    background: url('./gameImg/neta.jpg') center/cover no-repeat;
+}
 .homeg__card h5{
     font-size: 23px;
     cursor: pointer;
@@ -158,10 +164,10 @@ body{
   }
 
   .poli__main{
-    background: url('./gameImg/neta.jpg') bottom/100% no-repeat;
+    background: url('./gameImg/coverneta.png') bottom/100% no-repeat;
     background-size: cover;
     background-position:center;
-    height: 100%;
+    height: 100vh;
     width: 100%;
   }
 

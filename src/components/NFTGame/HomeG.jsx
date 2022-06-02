@@ -99,19 +99,19 @@ const HomeG = () => {
                         <div className="titles d-flex justify-content-around mt-5 mb-5">
                             <div className="card homeg__card cric__card">
                                 <div className='card-header'>
-                                    <h5><a href='/cric'>Crickters</a></h5>
+                                    <h5><a href='/cricket'>Crickters</a></h5>
                                     <p>Match the pairs and get lastest NFT's of your favourite crickters.</p>
                                 </div>
                             </div>
-                            <div className="card homeg__card">
+                            <div className="card homeg__card food__card">
                                 <div className='card-header'>
-                                    <h5><a href='/game' >Food</a></h5>
+                                    <h5><a href='/food' >Food</a></h5>
                                     <p>Match the pairs and get lastest NFT's of your favourite food items.</p>
                                 </div>
                             </div>
-                            <div className="card homeg__card">
+                            <div className="card homeg__card politician__card">
                                 <div className='card-header'>
-                                    <h5><a href='/game'>Politicians</a></h5>
+                                    <h5><a href='/politicians'>Politician</a></h5>
                                     <p>Match the pairs and get lastest NFT's of your favourite politicians.</p>
                                 </div>
                             </div>

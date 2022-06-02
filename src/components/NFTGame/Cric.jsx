@@ -10,81 +10,99 @@ import './Game.css'
 const CARD_ARRAY = [
     {
       name: 'bhumra',
-      img: '/nftImg/cric/bhumra.png'
+      img: '/nftImg/cric/bhumra.png',
+      url: 'https://i.imgur.com/8Zxg7xM.png'
     },
     {
       name: 'dhoni',
-      img: '/nftImg/cric/dhoni.png'
+      img: '/nftImg/cric/dhoni.png',
+      url: 'https://i.imgur.com/j59zQvV.png'
     },
     {
       name: 'dravid',
-      img: '/nftImg/cric/dravid.png'
+      img: '/nftImg/cric/dravid.png',
+      url: 'https://i.imgur.com/mTxLBYx.png'
     },
     {
       name: 'rahul',
-      img: '/nftImg/cric/rahul.png'
+      img: '/nftImg/cric/rahul.png',
+      url: 'https://i.imgur.com/a1KvC0j.png'
     },
     {
       name: 'rishbh',
-      img: '/nftImg/cric/rishbh.png'
+      img: '/nftImg/cric/rishbh.png',
+      url: 'https://i.imgur.com/7VP03Bt.png'
     },
     {
       name: 'rohit',
-      img: '/nftImg/cric/rohit.png'
+      img: '/nftImg/cric/rohit.png',
+      url: 'https://i.imgur.com/zGLslq0.png'
     },
     {
       name: 'jaddu',
-      img: '/nftImg/cric/jaddu.png'
+      img: '/nftImg/cric/jaddu.png',
+      url: 'https://i.imgur.com/UaPjsy1.png'
     },
     {
       name: 'virat',
-      img: '/nftImg/cric/virat.png'
+      img: '/nftImg/cric/virat.png',
+      url: 'https://i.imgur.com/xc4LgMb.png'
     },
     {
       name: 'dhawan',
-      img: '/nftImg/cric/dhawan.png'
+      img: '/nftImg/cric/dhawan.png',
+      url: 'https://imgur.com/mIrfV7s.png'
     },
     {
       name: 'bhumra',
-      img: '/nftImg/cric/bhumra.png'
+      img: '/nftImg/cric/bhumra.png',
+      url: 'https://i.imgur.com/8Zxg7xM.png'
     },
     {
       name: 'dhoni',
-      img: '/nftImg/cric/dhoni.png'
+      img: '/nftImg/cric/dhoni.png',
+      url: 'https://i.imgur.com/j59zQvV.png'
     },
     {
       name: 'dravid',
-      img: '/nftImg/cric/dravid.png'
+      img: '/nftImg/cric/dravid.png',
+      url: 'https://i.imgur.com/mTxLBYx.png'
     },
     {
       name: 'rahul',
-      img: '/nftImg/cric/rahul.png'
+      img: '/nftImg/cric/rahul.png',
+      url: 'https://i.imgur.com/a1KvC0j.png'
     },
     {
       name: 'rishbh',
-      img: '/nftImg/cric/rishbh.png'
+      img: '/nftImg/cric/rishbh.png',
+      url: 'https://i.imgur.com/7VP03Bt.png'
     },
     {
       name: 'rohit',
-      img: '/nftImg/cric/rohit.png'
+      img: '/nftImg/cric/rohit.png',
+      url: 'https://i.imgur.com/zGLslq0.png'
     },
     {
       name: 'jaddu',
-      img: '/nftImg/cric/jaddu.png'
+      img: '/nftImg/cric/jaddu.png',
+      url: 'https://i.imgur.com/UaPjsy1.png'
     },
     {
       name: 'virat',
-      img: '/nftImg/cric/virat.png'
+      img: '/nftImg/cric/virat.png',
+      url: 'https://i.imgur.com/xc4LgMb.png'
     },
     {
       name: 'dhawan',
-      img: '/nftImg/cric/dhawan.png'
+      img: '/nftImg/cric/dhawan.png',
+      url: 'https://imgur.com/mIrfV7s.png'
     },
     
   ]
   //Generating Random NFT to give as a Wining Price
-  const Rnft = CARD_ARRAY[Math.floor(Math.random() * CARD_ARRAY.length)].img.toString();
-  console.log(Rnft);
+  const Rnft = CARD_ARRAY[Math.floor(Math.random() * CARD_ARRAY.length)].url.toString();
+  console.log("RNFT:-",Rnft);
   
   
 class Cric extends Component {

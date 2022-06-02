@@ -26,12 +26,13 @@ class SellForm extends Component {
         }}>
           
                 <div className="info gradient__text">
-                    <label>Input </label>
+                    <label>Input</label>
                     <span>Balance: {window.web3.utils.fromWei(this.props.tokenBalance,'ether')}</span>
                 </div>
 
             <div className="input-group">                            
                 <input
+                step="any"
                     onChange={(event)=>{
                         // console.log('changing...');
                         const tokenAmount = this.input.value.toString()
@@ -51,8 +52,10 @@ class SellForm extends Component {
             </div>
 
             <div className="info gradient__text">
-                <label>Output</label>
-                <span>Balance: {window.web3.utils.fromWei(this.props.ethBalance,'ether')}</span>
+                <label>Output </label>
+                <span>
+                    Balance: {window.web3.utils.fromWei(this.props.ethBalance,'ether').slice(0,6)}
+                </span>
             </div>
             <div className="input-group">                        
                 <input type="text" placeholder="0"

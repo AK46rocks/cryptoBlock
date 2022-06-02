@@ -6,6 +6,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@reduxjs/toolkit": "^1.6.2",
+    "@truffle/hdwallet-provider": "^2.0.8",
     "antd": "^4.16.13",
     "aos": "^2.3.4",
     "axios": "^0.24.0",

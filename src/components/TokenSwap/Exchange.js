@@ -8,8 +8,8 @@ import EthSwap from '../../abis/EthSwap.json'
 import Footer from '../containers/Footer'
 import Moralis from 'moralis';
 
-  const serverUrl = "https://wvim2a5fxrco.usemoralis.com:2053/server";
-  const appId = "QrqwpM5Ng6JVbPfqEgulY4icpvMms9ccvRcvkRs7";
+const serverUrl = "https://icx8vlippczk.usemoralis.com:2053/server";
+const appId = "WFkh6QztmKA9JromTEdEEFMkSSxXKLu8wym2cvIa";
   Moralis.start({ serverUrl, appId });
   let user = Moralis.User.current();
 

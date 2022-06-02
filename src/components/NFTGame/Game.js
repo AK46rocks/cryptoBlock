@@ -10,7 +10,7 @@ import Confetti from 'react-confetti';
 const CARD_ARRAY = [
     {
       name: 'fries',
-      img: '/nftImg/food/r.gif'
+      img: '/nftImg/food/fries.png'
     },
     {
       name: 'cheeseburger',
@@ -34,7 +34,7 @@ const CARD_ARRAY = [
     },
     {
       name: 'fries',
-      img: '/nftImg/food/r.gif'
+      img: '/nftImg/food/fries.png'
     },
     {
       name: 'cheeseburger',

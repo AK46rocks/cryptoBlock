@@ -28,11 +28,14 @@ class BuyForm extends Component {
                       
                             <div className="info gradient__text">
                                 <label>Input </label>
-                                <span>Balance: {window.web3.utils.fromWei(this.props.ethBalance,'ether')}</span>
+                                <span>
+                                    Balance: {window.web3.utils.fromWei(this.props.ethBalance,'ether').slice(0,6)}
+                                </span>
                             </div>
 
                         <div className="input-group">                            
                             <input
+                            step="any"
                                 onChange={(event)=>{
                                     // console.log('changing...');
                                     const etherAmount = this.input.value.toString()
