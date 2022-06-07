@@ -13,7 +13,7 @@ module.exports = {
       network_id: "*" // Match any network id
     },
     matic: {
-      provider: () => new HDWalletProvider(mnemonic, `https://polygon-mumbai.g.alchemy.com/v2/rHFMxHTwzAE8bNsE8XFsx55C2YSp-C01`),
+      provider: () => new HDWalletProvider(mnemonic, `Enter your API node server link`),
       network_id: 80001,
       confirmations: 2,
       timeoutBlocks: 200,
